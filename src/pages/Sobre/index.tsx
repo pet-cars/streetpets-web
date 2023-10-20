@@ -11,7 +11,7 @@ import f7 from '../../assets/images/7.jpg'
             <h1 className='titulo-sobre'><span>Departamento </span>de Proteção à <em>Fauna</em> Silvestre e <span>Bem-Estar</span> <em>Animal</em></h1>
 
             <div className='conteudo-sobre'>
-                <img className='equipe' src={equipe}/>
+                <img className='equipe' src={equipe} loading='lazy' />
 
                 <div className='sobre-equipe'>
                     <p>A equipe criada em 10 de Junho de 2021 já realizou mais de 1891 resgates de animais, atuou em mais de 243 casos de maus tratos aos animais e conseguiu um lar para mais de 171 animais de rua. Apenas no mês de Abril passaram 
