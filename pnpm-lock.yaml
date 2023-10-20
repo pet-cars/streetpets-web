@@ -34,9 +34,6 @@ devDependencies:
   '@vitejs/plugin-react':
     specifier: ^4.0.3
     version: 4.0.4(vite@4.4.9)
-  prisma:
-    specifier: ^5.1.1
-    version: 5.3.1
   typescript:
     specifier: ^5.0.2
     version: 5.2.2
