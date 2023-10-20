@@ -1,0 +1,86 @@
+.title-cadastro{
+    margin-top: 10vh;
+    text-align: center;
+    margin-bottom: 3vh;
+}
+.form-cadastro{
+    width: 750px;
+    margin: auto;
+    margin-bottom: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 25px;
+    box-shadow: 1px 1px 3px 3px #e7dede;
+}
+.formulario{
+    display: flex;
+    justify-content: space-between;
+}
+.teste{
+    display: flex;
+    flex-direction: column;
+}
+.part-1{
+    width: 50%;
+    margin-right: 1rem;
+}
+.part-2{
+    width: 50%;
+    margin-left: 1rem;
+}
+
+.label-cadastro{
+    align-items: center;
+}
+.form-campo{
+    border: none;
+    border-bottom: 1px solid #9BDBF8;
+    margin-bottom: 16px;
+    font-size: 15px;
+}
+.form-campo textarea:focus, input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+    font-size: 15px;
+}
+
+.botao{
+    text-align: center;
+}
+.enviar-cadastro{
+    font-family: "Poppins", sans-serif;
+    font-size: 19px;
+    padding: 5px;
+    border: solid 2px;
+    border-color: var(--laranjao);
+    background-color: #fff;
+    border-radius: 15px;
+}
+.enviar-cadastro:hover{
+    cursor: pointer;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@media (max-width:768px) {
+    .main-cadastro{
+        margin: 0 auto;
+        padding: 0 1.5rem;
+    }
+    .formulario{
+        flex-direction: column;
+    }
+    .form-cadastro{
+        width: 100%;
+    }
+    .part-1{
+        width: 100%;
+        margin: auto;
+    }
+    .part-2{
+        width: 100%;
+        margin: auto;
+    }
+}
