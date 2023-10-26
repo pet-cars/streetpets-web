@@ -3,7 +3,7 @@ header {
     padding: 0.3rem 0;
 }
 
-nav {
+.menu-cont {
     display: flex;
     justify-content: space-between;
     height: 100%;

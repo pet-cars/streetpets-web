@@ -22,7 +22,7 @@ export default function Header() {
 
     return (
         <header>
-            <nav>
+            <nav className="menu-cont">
                 <img className="logo" src={logo}/>
                 <ul className="menu">
                     <li className="menu-item">

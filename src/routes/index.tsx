@@ -5,6 +5,7 @@ import Cadastro from '../pages/Cadastro'
 import Login from '../pages/Login'
 import Sobre from "../pages/Sobre"
 import Contato from "../pages/Contato"
+import Dashboard from "../pages/Dashboard"
 
 export default function AllRoutes() {
     return (
@@ -14,6 +15,7 @@ export default function AllRoutes() {
             <Route path="/login" element={<Login />} />
             <Route path="/Sobre" element={<Sobre/>} />
             <Route path="/Contato" element={<Contato/>} />
+            <Route path="/Dashboard" element={<Dashboard/>} />
         </Routes>
     )
 }

@@ -1,0 +1,38 @@
+.men{
+    width: 16%;
+    padding: 1rem;
+    background-color: blue;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.menu-i{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.i{
+    font-size: 20px;
+}
+
+.sair{
+    background-color: blue;
+    border: solid 2px var(--laranjao);
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 25px;
+    color: #fff;
+}
+
+button{
+    border: none;
+}
