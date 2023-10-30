@@ -7,18 +7,24 @@ export default function Dashboard(){
         <>
             <header className='men'>
                 <nav className='m'>
-                    <ul className='menu-i'>
-                        <li className='i'>
-                            <NavLink to={"/Dono"}>Área do Dono</NavLink>
-                        </li>
+                    <div className='aling'>
+                        <ul className='menu-i'>
+                            <li className='i'>
+                                <NavLink to={"/Dono"}>Área do Dono</NavLink>
+                            </li>
 
-                        <li className='i'>
-                            <NavLink to={"/Pet"}>Área do Pet</NavLink>
-                        </li>
-                        
-                        <button className='sair' type='submit'>Sair</button>
-                    </ul>
-                    
+                            <li className='i'>
+                                <NavLink to={"/Pet"}>Área do Pet</NavLink>
+                            </li>
+
+                            <li className='i'>
+                                <NavLink to={"/Pet"}>Cadastrar Pet</NavLink>
+                            </li>
+                            
+                        </ul>
+                            <button className='sair' type='submit'>Sair</button>
+
+                    </div> 
                 </nav>
             </header>
         </>

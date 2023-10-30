@@ -6,10 +6,14 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
+.m{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
 
 
 .menu-i{
@@ -17,11 +21,35 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 5rem;
+    margin-bottom: 30vh;
 }
+
+
+
 
 .i{
     font-size: 20px;
+    position: relative;
+}
+.i a.active {
+    color: #F87800;
+    border-bottom: 3px solid #F87800;
+}
+
+.i::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    height: 3px;
+    width: 0;
+    background: #F87800;
+    border-radius: 50px;
+    transition: width 0.3s ease;
+}
+
+.i:hover::before {
+    width: 100%;
 }
 
 .sair{
@@ -32,6 +60,7 @@
     border-radius: 25px;
     color: #fff;
 }
+
 
 button{
     border: none;
