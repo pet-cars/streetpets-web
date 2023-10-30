@@ -1,8 +1,11 @@
+.todo{
+    display: flex;
+    gap: 5rem;
+}
 .men{
     width: 16%;
     padding: 1rem;
     background-color: blue;
-    position: fixed;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -34,7 +37,7 @@
 }
 .i a.active {
     color: #F87800;
-    border-bottom: 3px solid #F87800;
+    border-bottom: 2px solid #F87800;
 }
 
 .i::before {
@@ -64,4 +67,58 @@
 
 button{
     border: none;
+    cursor: pointer;
+}
+
+.cont{
+    width: 100%;
+    display: inline-block;
+    padding-right: 5rem;
+    margin-top: 4rem;
+
+}
+
+.titulo-D{
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.painel{
+    width: 100%;
+    margin-top: 2rem;
+    background-color: #F8F8FF;
+    border-radius: 25px;
+    box-shadow: 1px 1px 3px 3px #e7dede;
+    padding: 2rem;
+}
+
+.form-D{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.item-p{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.item{
+    color: var(--laranjao);
+    font-weight: 600;
+}
+
+.dados{
+    padding: 0.5rem;
+    background-color: #fff;
+    border: 1px solid var(--azulao);
+    border-radius: 5px;
+}
+
+.dados::-webkit-input-placeholder{
+    font-family: Poppins, sans-serif;
+    color: var(--azulao);
+    opacity: 0.8;
+    font-weight: 400;
 }
