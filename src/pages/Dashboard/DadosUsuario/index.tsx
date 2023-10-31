@@ -11,11 +11,11 @@ export default function Dashboard(){
                         <div className='aling'>
                             <ul className='menu-i'>
                                 <li className='i'>
-                                    <NavLink to={"/Dono"}>Área do Dono</NavLink>
+                                    <NavLink to={"/Dashboard/Dono"}>Área do Dono</NavLink>
                                 </li>
 
                                 <li className='i'>
-                                    <NavLink to={"/Pet"}>Área do Pet</NavLink>
+                                    <NavLink to={"/Dashboard/Pet"}>Área do Pet</NavLink>
                                 </li>
 
                                 <li className='i'>

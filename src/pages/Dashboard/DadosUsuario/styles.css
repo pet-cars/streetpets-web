@@ -24,27 +24,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     gap: 5rem;
     margin-bottom: 30vh;
 }
 
-
-
-
 .i{
-    font-size: 20px;
+    font-size: 19px;
     position: relative;
 }
-.i a.active {
-    color: #F87800;
-    border-bottom: 2px solid #F87800;
-}
+
 
 .i::before {
     content: "";
     position: absolute;
     bottom: -2px;
-    height: 3px;
+    height: 2px;
     width: 0;
     background: #F87800;
     border-radius: 50px;
@@ -62,8 +57,13 @@
     width: 100%;
     border-radius: 25px;
     color: #fff;
+    transition: 1s;
 }
 
+.sair:hover{
+    background-color: #F87800;
+    transition: 1s;
+}
 
 button{
     border: none;
@@ -74,7 +74,7 @@ button{
     width: 100%;
     display: inline-block;
     padding-right: 5rem;
-    margin-top: 4rem;
+    margin-top: 1rem;
 
 }
 
@@ -101,7 +101,7 @@ button{
 .item-p{
     display: flex;
     flex-direction: column;
-    width: 30%;
+    width: 29%;
 }
 
 .item{
@@ -121,4 +121,14 @@ button{
     color: var(--azulao);
     opacity: 0.8;
     font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .item-p{
+        width: 26%;
+    }
+
+    .i{
+        font-size: 18px;
+    }
 }
