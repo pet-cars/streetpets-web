@@ -12,10 +12,8 @@ const valorFormulario = {
     senha: String,
     Csenha: String,
     cep: String,
-    cidade: String,
     bairro: String,
     endereco: String,
-    numero: String,
     complemento: String,
 }
 
@@ -93,11 +91,6 @@ export default function Cadastro() {
                             </div>
                             
                             <div className='teste'>
-                                <label htmlFor="cidade" className='label-cadastro'>Cidade:</label>
-                                <input className='form-campo' required name='cidade' id='cidade' type="text" onChange={onChange}/>
-                            </div>
-                            
-                            <div className='teste'>
                                 <label htmlFor="bairro" className='label-cadastro'>Bairro:</label>
                                 <input className='form-campo' required name='bairro' id='bairro' type="text" onChange={onChange}/>
                             </div>
@@ -108,13 +101,8 @@ export default function Cadastro() {
                             </div>
                             
                             <div className='teste'>
-                                <label htmlFor="numero" className='label-cadastro'>Número:</label>
-                                <input className='form-campo' required name='numero' id='numero' type="text" onChange={onChange}/>
-                            </div>
-                            
-                            <div className='teste'>
                                 <label htmlFor="complemento" className='label-cadastro'>Complemento:</label>
-                                <input className='form-campo' required name='complemento' id='complemento' type="text" onChange={onChange}/>
+                                <input className='form-campo' name='complemento' id='complemento' type="text" onChange={onChange}/>
                             </div>
                         </div>
                     </div>

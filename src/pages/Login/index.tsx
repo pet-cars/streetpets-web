@@ -4,25 +4,33 @@ import Footer from '../../components/Footer'
 import detalhe from '../../assets/images/footer-dec.png'
 import axios from 'axios'
 import { useState } from 'react'
+
+const valorFormulario = {
+    email: String,
+    senha: String,
+}
 export default function Login() {
-    const [email, setEmail] = useState('')
-    const [senha, setSenha] = useState('')
+    const [formValores, setFormValores] = useState(valorFormulario);
 
-    // const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    //     setFormValores((prevState) => ({
-    //         ...prevState,
-    //         [e.target.id]: e.target.value
-    //     }))
-    // }
+    const onChange = (e : React.ChangeEvent<HTMLInputElement>) => {
+        setFormValores((prevState)=> ({
+             ...prevState,
+            [e.target.id]: e.target.value
+        }))
+    }
 
-    async function Form(e: React.FormEvent<HTMLFormElement>) {
+    function Form(e : React.FormEvent<HTMLFormElement>){
         e.preventDefault();
-        const params = { email, senha }
+        console.log(formValores);
+        setFormValores(valorFormulario);
+
         try {
-            const response = await axios.get("http://localhost:3333/login", { params })
-            console.log({response: response.data});
-        } catch (err) {
-            console.log(' algo deu errado ')
+            axios.post("http://localhost:3333/login", formValores)
+            .then(() => {
+                window.location.href = "/Dashboard"
+            })
+        } catch (error) {
+            console.log(error);
         }
     }
 
@@ -35,12 +43,12 @@ export default function Login() {
                     <div className='conteudo'>
                         <div className='email'>
                             <label className='label-login'>Email:</label>
-                            <input className='form-campo-login' value={email} type='email' placeholder='Digite seu email' required name='email' id='email' onChange={e => setEmail(e.target.value)} />
+                            <input className='form-campo-login' type='email' placeholder='Digite seu email' required name='email' id='email' onChange={onChange} />
                         </div>
 
                         <div className='senha'>
                             <label className='label-login'>Senha:</label>
-                            <input className='form-campo-login' type='password' value={senha} placeholder='Digite sua senha' required name='senha' id='senha' onChange={e => setSenha(e.target.value)} />
+                            <input className='form-campo-login' type='password' placeholder='Digite sua senha' required name='senha' id='senha' onChange={onChange} />
                         </div>
 
                         <div className='lembre'>
