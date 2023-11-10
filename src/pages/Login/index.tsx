@@ -11,7 +11,7 @@ const valorFormulario = {
 }
 export default function Login() {
     const [formValores, setFormValores] = useState(valorFormulario);
-
+    const [usuarioLogin,setusuarioLogin] = useState('')
     const onChange = (e : React.ChangeEvent<HTMLInputElement>) => {
         setFormValores((prevState)=> ({
              ...prevState,
@@ -19,21 +19,23 @@ export default function Login() {
         }))
     }
 
-    function Form(e : React.FormEvent<HTMLFormElement>){
+    async function Form(e : React.FormEvent<HTMLFormElement>){
         e.preventDefault();
         console.log(formValores);
         setFormValores(valorFormulario);
 
         try {
-            axios.post("http://localhost:3333/login", formValores)
-            .then(() => {
-                window.location.href = "/Dashboard"
+            await axios.post("http://localhost:3333/login", formValores).then((response) => {
+                if (response.data.message == 'Usuário encontrado') {
+                    window.location.href='/Dashboard/Dono'
+
+                }
+                else setusuarioLogin(response.data.message)
             })
         } catch (error) {
             console.log(error);
         }
     }
-
     return (
         <>
             <Header/>
@@ -64,6 +66,10 @@ export default function Login() {
                                 Não possui uma conta? crie uma agora
                             </a>
                         </div>
+                    </div>
+
+                    <div className='conteudo'>
+                        {usuarioLogin}
                     </div>
 
                     <img className='detalhe' src={detalhe} />

@@ -13,7 +13,7 @@ export default function Home() {
         <>
         <Header/>
             <main className="main-home">
-                <section className="cont">
+                <section className="cont-banner">
                     <ul>
                         <li className="title1">
                         BEM VINDO!

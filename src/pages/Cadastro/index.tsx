@@ -28,16 +28,14 @@ export default function Cadastro() {
         }))
     }
 
-    function Form(e : React.FormEvent<HTMLFormElement>){
+    async function Form(e : React.FormEvent<HTMLFormElement>){
         e.preventDefault();
         console.log(formValores);
         setFormValores(valorFormulario);
 
         try {
-            axios.post("http://localhost:3333/register", formValores)
-            .then(() => {
-                window.location.href = "/Dashboard"
-            })
+            const registrar = await axios.post("http://localhost:3333/register", formValores)
+            console.log(registrar.data)
         } catch (error) {
             console.log(error);
         }
