@@ -75,13 +75,15 @@ export default function Cadastro() {
                                 <input className='form-campo' required name='senha' id='senha' type="password" onChange={onChange}/>
                             </div>
                             
+                            
+                        </div>
+
+                        <div className='part-2'>
+
                             <div className='teste'>
                                 <label htmlFor="Csenha" className='label-cadastro'>Confirmar Senha:</label>
                                 <input className='form-campo' required name='Csenha' id='Csenha' type="password" onChange={onChange}/>
                             </div>
-                        </div>
-
-                        <div className='part-2'>
 
                             <div className='teste'>
                                 <label htmlFor="CEP" className='label-cadastro'>CEP:</label>
