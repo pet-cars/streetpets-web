@@ -24,7 +24,15 @@
 
 .label-login{
     align-items: center;
+    display: flex;
+    justify-content: space-between;
     font-size: 18px;
+}
+
+.resultado{
+    font-size: 15px;
+    color: red;
+    opacity: 0.8;
 }
 .form-campo::-webkit-input-placeholder{
     font-family: Poppins, sans-serif;

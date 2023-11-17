@@ -23,7 +23,8 @@ export default function Dashboard(){
                                 </li>
                                 
                             </ul>
-                                <button className='sair' type='submit'>Sair</button>
+                            
+                            <NavLink to={"/"}><button className='sair' type='button'>Sair</button></NavLink>
 
                         </div> 
                     </nav>

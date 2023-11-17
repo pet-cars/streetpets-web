@@ -44,12 +44,26 @@ export default function Login() {
                 <form className='form-login' onSubmit={Form}>
                     <div className='conteudo'>
                         <div className='email'>
-                            <label className='label-login'>Email:</label>
+                            <label className='label-login'>
+                                Email: 
+
+                                <div className='resultado'>
+                                    {usuarioLogin}
+                                </div>
+                            
+                            </label>
                             <input className='form-campo-login' type='email' placeholder='Digite seu email' required name='email' id='email' onChange={onChange} />
                         </div>
 
                         <div className='senha'>
-                            <label className='label-login'>Senha:</label>
+                        <label className='label-login'>
+                                Senha: 
+
+                                <div className='resultado'>
+                                    {usuarioLogin}
+                                </div>
+                            
+                            </label>
                             <input className='form-campo-login' type='password' placeholder='Digite sua senha' required name='senha' id='senha' onChange={onChange} />
                         </div>
 
@@ -66,10 +80,6 @@ export default function Login() {
                                 Não possui uma conta? crie uma agora
                             </a>
                         </div>
-                    </div>
-
-                    <div className='conteudo'>
-                        {usuarioLogin}
                     </div>
 
                     <img className='detalhe' src={detalhe} />

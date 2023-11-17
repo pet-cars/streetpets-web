@@ -62,12 +62,6 @@
     width: 100%;
     border-radius: 25px;
     color: #fff;
-    transition: 1s;
-}
-
-.sair:hover{
-    background-color: #F87800;
-    transition: 1s;
 }
 
 button{
