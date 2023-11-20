@@ -84,7 +84,6 @@ export default function Login() {
                         </div>
                         <div className='botao'>
                             <button className='botao-login' type='submit'>Entrar</button>
-                            <button onClick={() => Teste()}>teste</button>
                         </div>
 
                         <div className='cadastrar'>
