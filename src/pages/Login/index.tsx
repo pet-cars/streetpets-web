@@ -27,7 +27,6 @@ export default function Login() {
     const navigate = useNavigate()
     const {autent, setAutent} =  useContext(Auntenticacao)
 
-    const Teste = () => {setAutent(true)}
 
     function Form(e : React.FormEvent<HTMLFormElement>){
         e.preventDefault();
