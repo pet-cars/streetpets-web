@@ -3,32 +3,43 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import detalhe from '../../assets/images/footer-dec.png'
 import axios from 'axios'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { Auntenticacao } from '../../context/Aunt'
+import { useNavigate } from 'react-router-dom'
 
-const valorFormulario = {
-    email: String,
-    senha: String,
-}
+type valorFormulario =  {email: string, senha: string,} 
+
+const valoresIniciais: valorFormulario = {
+    email: '',
+    senha: '',
+};
 export default function Login() {
-    const [formValores, setFormValores] = useState(valorFormulario);
+    const [formValores, setFormValores] = useState<valorFormulario>(valoresIniciais);
     const [usuarioLogin,setusuarioLogin] = useState('')
     const onChange = (e : React.ChangeEvent<HTMLInputElement>) => {
-        setFormValores((prevState)=> ({
-             ...prevState,
-            [e.target.id]: e.target.value
-        }))
+        const { id, value } = e.target;
+        setFormValores((prevState) => ({
+            ...prevState,
+            [id]: value,
+        }));
     }
 
-    async function Form(e : React.FormEvent<HTMLFormElement>){
+    const navigate = useNavigate()
+    const {autent, setAutent} =  useContext(Auntenticacao)
+
+    const Teste = () => {setAutent(true)}
+
+    function Form(e : React.FormEvent<HTMLFormElement>){
         e.preventDefault();
         console.log(formValores);
-        setFormValores(valorFormulario);
+        setFormValores(valoresIniciais);
 
         try {
-            await axios.post("http://localhost:3333/login", formValores).then((response) => {
+            axios.post("http://localhost:3333/login", formValores).then((response) => {
                 if (response.data.message == 'Usuário encontrado') {
-                    window.location.href='/Dashboard/Dono'
-
+                    setAutent(true)
+                    navigate ('/Dashboard/Dono')
+                    console.log(autent)
                 }
                 else setusuarioLogin(response.data.message)
             })
@@ -52,7 +63,7 @@ export default function Login() {
                                 </div>
                             
                             </label>
-                            <input className='form-campo-login' type='email' placeholder='Digite seu email' required name='email' id='email' onChange={onChange} />
+                            <input className='form-campo-login' type='email' placeholder='Digite seu email' required name='email' value={formValores.email} id='email' onChange={onChange} />
                         </div>
 
                         <div className='senha'>
@@ -64,7 +75,7 @@ export default function Login() {
                                 </div>
                             
                             </label>
-                            <input className='form-campo-login' type='password' placeholder='Digite sua senha' required name='senha' id='senha' onChange={onChange} />
+                            <input className='form-campo-login' type='password' placeholder='Digite sua senha' required name='senha' value={formValores.senha} id='senha' onChange={onChange} />
                         </div>
 
                         <div className='lembre'>
@@ -73,6 +84,7 @@ export default function Login() {
                         </div>
                         <div className='botao'>
                             <button className='botao-login' type='submit'>Entrar</button>
+                            <button onClick={() => Teste()}>teste</button>
                         </div>
 
                         <div className='cadastrar'>
