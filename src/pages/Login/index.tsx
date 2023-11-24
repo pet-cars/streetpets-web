@@ -37,15 +37,49 @@ export default function Login() {
             axios.post("http://localhost:3333/login", formValores).then((response) => {
                 if (response.data.message == 'Usuário encontrado') {
                     setAutent(true)
-                    navigate ('/Dashboard/Dono')
-                    console.log(autent)
+                    // navigate ('/Dashboard/Dono')
                 }
                 else setusuarioLogin(response.data.message)
             })
         } catch (error) {
             console.log(error);
         }
+
+        // accessProtectedResource()
     }
+
+//     const token = localStorage.getItem('token');
+//     console.log(token)
+//     const headers = new Headers();
+// headers.append('authorization', `Bearer ${token}`);
+// headers.append('Content-Type', 'application/json');
+
+// // Opções da requisição, incluindo o método HTTP, cabeçalhos e corpo (se aplicável)
+// const requestOptions: RequestInit = {
+//   method: 'GET',  // ou 'POST', 'PUT', etc., dependendo do tipo de requisição que você está fazendo
+//   headers: headers,
+//   // body: JSON.stringify({ chave: 'valor' })  // Adicione isso se estiver fazendo uma requisição com corpo JSON
+// };
+
+    // async function accessProtectedResource() {
+  
+    //     try {
+    //       const response = await fetch('http://localhost:3333/recurso-protegido', requestOptions);
+    //       console.log(response)
+  
+    //       const data = await response.json();
+    //       if (response.ok) {
+    //         console.log('Resposta do recurso protegido:', data);
+    //       } else {
+    //         console.log('Erro ao acessar o recurso protegido:', data.message);
+    //       }
+    //     } catch (error) {
+    //       console.error('Erro:', error);
+    //     }
+    // }
+
+    
+
     return (
         <>
             <Header/>

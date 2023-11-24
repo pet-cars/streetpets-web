@@ -7,7 +7,7 @@ type auntContext = {
     setAutent: (newState:boolean) => void
 }
 
-const valoresIniciais = {autent: true, setAutent:() => {}}
+const valoresIniciais = {autent: false, setAutent:() => {}}
 const Auntenticacao = createContext<auntContext>(valoresIniciais)
 const Aunt = ({children}:Props) => {
     const [autent, setAutent] = useState(valoresIniciais.autent)
