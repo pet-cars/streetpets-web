@@ -1,14 +1,14 @@
 import Header from '../../../components/Header';
-// import React from 'react';
+import React from 'react';
 import { NavLink } from "react-router-dom";
 import '../style.css'
 
 
 export default function Pets() {
     
-    // const isRadioSelected = (value: string): boolean => true;
+    const isRadioSelected = (value: string): boolean => true;
     
-    // const handleRadioClick = (e:React.ChangeEvent<HTMLInputElement>): void => console.log('click')
+    const handleRadioClick = (e:React.ChangeEvent<HTMLInputElement>): void => console.log('click')
 
     return(
         <>
@@ -24,8 +24,8 @@ export default function Pets() {
                                 <input type="radio" 
                                     name="react-radio-bnt" 
                                     value="radio1" 
-                                    // checked={isRadioSelected('radio1')} 
-                                    // onChange={handleRadioClick}
+                                    checked={isRadioSelected('radio1')} 
+                                    onChange={handleRadioClick}
                                 />
                                 SIM
                                 <span className='checkmark'></span>
@@ -35,8 +35,8 @@ export default function Pets() {
                                 <input type="radio" 
                                     name="react-radio-bnt" 
                                     value="radio2" 
-                                    // checked={isRadioSelected('radio2')} 
-                                    // onChange={handleRadioClick}
+                                    checked={isRadioSelected('radio2')} 
+                                    onChange={handleRadioClick}
                                     
                                 />
                                 NÃO
