@@ -21,6 +21,9 @@
 .senha{
     margin-bottom: 1rem;
 }
+.entrar{
+    color: black;
+}
 
 .label-login{
     align-items: center;

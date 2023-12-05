@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import './styles.css'
 
-export default function Dashboard(){
+export default function DashboardPets(){
     
     return(
         <>
@@ -15,15 +15,15 @@ export default function Dashboard(){
                                 </li>
 
                                 <li className='i'>
-                                    <NavLink to={"/Dashboard/Pet"}>Área do Pet</NavLink>
+                                    <NavLink to={"/Dashboard/Pets"}>Área do Pet</NavLink>
                                 </li>
 
                                 <li className='i'>
-                                    <NavLink to={"/Pet"}>Cadastrar Pet</NavLink>
+                                    <NavLink to={"/Dashboard/Cadastro"}>Cadastrar Pet</NavLink>
                                 </li>
                                 
                             </ul>
-                                <button className='sair' type='submit'>Sair</button>
+                            <NavLink to={"/"}><button className='sair' type='button'>Sair</button></NavLink>
 
                         </div> 
                     </nav>

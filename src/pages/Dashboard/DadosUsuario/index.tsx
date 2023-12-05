@@ -16,11 +16,11 @@ export default function Dashboard(){
                                 </li>
 
                                 <li className='i'>
-                                    <NavLink to={"/Dashboard/Pet"}>Área do Pet</NavLink>
+                                    <NavLink to={"/Dashboard/Pets"}>Área do Pet</NavLink>
                                 </li>
 
                                 <li className='i'>
-                                    <NavLink to={"/Pet"}>Cadastrar Pet</NavLink>
+                                    <NavLink to={"/Dashboard/Cadastro"}>Cadastrar Pet</NavLink>
                                 </li>
                                 
                             </ul>

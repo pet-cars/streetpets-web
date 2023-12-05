@@ -2,10 +2,11 @@ import './styles.css'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import detalhe from '../../assets/images/footer-dec.png'
+import {  useState } from 'react'
+// import { Auntenticacao } from '../../context/Aunt'
+import { NavLink, useNavigate } from 'react-router-dom'
+// import { AuthContext } from '../../context/auth/AuthContext'
 import axios from 'axios'
-import { useContext, useState } from 'react'
-import { Auntenticacao } from '../../context/Aunt'
-import { useNavigate } from 'react-router-dom'
 
 type valorFormulario =  {email: string, senha: string,} 
 
@@ -24,26 +25,38 @@ export default function Login() {
         }));
     }
 
-    const navigate = useNavigate()
-    const {autent, setAutent} =  useContext(Auntenticacao)
+    // const auth = useContext(AuthContext);
 
+    // const navigate = useNavigate()
+    // const {autent, setAutent} =  useContext(Auntenticacao)
 
-    function Form(e : React.FormEvent<HTMLFormElement>){
+    // useEffect(() => {
+    //     console.log(autent);
+    //    }, [autent]);
+
+    const navigate = useNavigate();
+
+    async function Form(e : React.FormEvent<HTMLFormElement>){
         e.preventDefault();
         console.log(formValores);
         setFormValores(valoresIniciais);
+        // if (formValores.email && formValores.senha) {
+        //     const isLogged = await auth.signin(formValores)
+        //     if (isLogged) {
+        //         navigate('/Dashboard/Dono');
+        //     }
+        // }
 
-        try {
-            axios.post("http://localhost:3333/login", formValores).then((response) => {
-                if (response.data.message == 'Usuário encontrado') {
-                    setAutent(true)
-                    // navigate ('/Dashboard/Dono')
-                }
-                else setusuarioLogin(response.data.message)
-            })
-        } catch (error) {
-            console.log(error);
+        axios.post("http://localhost:3333/login", formValores)
+        .then((response) => {
+        if (response.data.message == 'Usuário encontrado') {
+            navigate ('/Dashboard/Dono')
         }
+        else setusuarioLogin(response.data.message)
+        })
+        .catch((error) => {
+            console.log(error);
+        });
 
         // accessProtectedResource()
     }
@@ -116,7 +129,9 @@ export default function Login() {
                             <input type='checkbox' />
                         </div>
                         <div className='botao'>
-                            <button className='botao-login' type='submit'>Entrar</button>
+                            <button className='botao-login' type='submit'>
+                                <NavLink to={'/Dashboard/dono'} className={'entrar'}>Entrar</NavLink>
+                            </button>
                         </div>
 
                         <div className='cadastrar'>
