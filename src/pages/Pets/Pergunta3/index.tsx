@@ -35,7 +35,7 @@ export default function OptionThree() {
                             <label htmlFor="radio" className='container'>
                                 <input type="radio" 
                                     name="react-radio-bnt" 
-                                    value="radio2" 
+                                    value="radio2" checked
                                     // checked={isRadioSelected('radio2')} 
                                     // onChange={handleRadioClick}
                                     

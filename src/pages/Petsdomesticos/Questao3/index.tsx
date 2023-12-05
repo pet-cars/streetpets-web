@@ -24,7 +24,7 @@ export default function Question3() {
                             <label htmlFor="radio" className='container'>
                                 <input type="radio" 
                                     name="react-radio-bnt" 
-                                    value="radio1" 
+                                    value="radio1" checked
                                     // checked={isRadioSelected('radio1')} 
                                     // onChange={handleRadioClick}
                                 />
