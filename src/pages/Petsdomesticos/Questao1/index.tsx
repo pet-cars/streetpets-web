@@ -1,4 +1,3 @@
-import Header from "../../../components/Header";
 import React, { useState } from "react";
 
 import "../style.css";
@@ -33,8 +32,6 @@ const valorFormulario = {
 export default function Question1() {
   const [formValores, setFormValores] = useState(valorFormulario);
 
-  const [vacinado, setVacinado] = useState("");
-
   //const { sexo, especie } = valorFormulario;
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,7 +39,6 @@ export default function Question1() {
       ...prevState,
       [e.target.name]: e.target.value,
     }));
-    setVacinado(e.target.value);
   };
 
   async function cadastroPets(e: React.FormEvent<HTMLFormElement>) {

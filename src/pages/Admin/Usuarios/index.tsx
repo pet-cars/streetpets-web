@@ -2,8 +2,8 @@ import "../styles.css";
 import { X, Menu } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { MobileMenu } from "../../../components/Header/Mobile-menu";
-import axios from "axios";
-import { useState, useEffect } from "react";
+// import axios from "axios";
+import { useState } from "react";
 
 export default function Admin() {
   const [showMenu, setShowMenu] = useState(false);
