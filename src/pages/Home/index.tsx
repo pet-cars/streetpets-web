@@ -7,8 +7,24 @@ import b1 from '../../assets/images/b1.png'
 import b2 from '../../assets/images/b2.png'
 import b3 from '../../assets/images/b3.png'
 import sobre from '../../assets/images/sobre.png'
+import { useIsLogadoContext } from "../../context/auth/isLogadoContext"
+import { useJwt } from 'react-jwt'
 
 export default function Home() {
+    
+    const { setIsLogado } = useIsLogadoContext();
+    const token = localStorage.getItem("token");
+    
+    if (token) {
+        
+        const { decodedToken, isExpired } = useJwt(token)
+        
+        console.log(decodedToken)
+        console.log(isExpired)
+
+        setIsLogado(true);
+    }
+
     return (
         <>
         <Header/>

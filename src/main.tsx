@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "./styles/global.css";
 
 import AllRoutes from "./routes";
-// import { AuthProvider } from './context/auth/AuthProvider'
+import { IsLogadoProvider } from "./context/auth/isLogadoContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -11,8 +11,8 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <Router>
-    {/* <AuthProvider> */}
-    <AllRoutes />
-    {/* </AuthProvider> */}
+    <IsLogadoProvider>
+      <AllRoutes />
+    </IsLogadoProvider>
   </Router>
 );

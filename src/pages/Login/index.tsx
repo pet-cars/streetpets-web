@@ -4,11 +4,13 @@ import Footer from "../../components/Footer";
 import detalhe from "../../assets/images/footer-dec.png";
 import { useState } from "react";
 // import { Auntenticacao } from '../../context/Aunt'
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import { AuthContext } from '../../context/auth/AuthContext'
 import axios from "axios";
+import { useIsLogadoContext } from "../../context/auth/isLogadoContext";
 
 type valorFormulario = { email: string; senha: string };
+
 
 const valoresIniciais: valorFormulario = {
   email: "",
@@ -16,7 +18,7 @@ const valoresIniciais: valorFormulario = {
 };
 export default function Login() {
   const [formValores, setFormValores] =
-    useState<valorFormulario>(valoresIniciais);
+  useState<valorFormulario>(valoresIniciais);
   const [usuarioLogin, setusuarioLogin] = useState("");
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
@@ -25,7 +27,9 @@ export default function Login() {
       [id]: value,
     }));
   };
-
+  
+  const { setIsLogado } = useIsLogadoContext();
+  
   // const auth = useContext(AuthContext);
 
   // const navigate = useNavigate()
@@ -51,6 +55,9 @@ export default function Login() {
     axios
       .post("http://localhost:3333/login", formValores)
       .then((response) => {
+        localStorage.setItem("token", response.data.token) //Colocando token no localStorage
+        setIsLogado(true)
+
         if (response.data.message == "Usuário encontrado") {
           navigate("/Dashboard/Dono");
         } else setusuarioLogin(response.data.message);
@@ -135,12 +142,6 @@ export default function Login() {
               />
             </div>
 
-            <div className="lembre">
-              <label className="lembre-de-mim" htmlFor="">
-                Lembre de mim
-              </label>
-              <input type="checkbox" />
-            </div>
             <div className="botao">
               <button className="botao-login" type="submit">
                 Entrar

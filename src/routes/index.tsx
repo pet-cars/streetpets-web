@@ -14,6 +14,7 @@ import Admin from "../pages/Admin/Usuarios";
 import Domesticos from "../pages/Admin/AnimaisCadastrados";
 import Rua from "../pages/Pets/Pergunta1";
 import Question1 from "../pages/Petsdomesticos/Questao1";
+import { useIsLogadoContext } from "../context/auth/isLogadoContext";
 
 // import { RequireAuth } from "../context/auth/RequireAuth"
 
@@ -23,6 +24,9 @@ import Question1 from "../pages/Petsdomesticos/Questao1";
 //     return <Outlet/>
 // }
 export default function AllRoutes() {
+
+  const { isLogado } = useIsLogadoContext();
+
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -30,15 +34,19 @@ export default function AllRoutes() {
       <Route path="/login" element={<Login />} />
       <Route path="/Sobre" element={<Sobre />} />
       <Route path="/Contato" element={<Contato />} />
-      <Route path="/Dashboard/Dono" element={<Dashboard />} />
-      <Route path="/Dashboard/Pets" element={<DashboardPets />} />
-      <Route path="/Dashboard/Cadastro" element={<Primeira />} />
-      <Route path="/Pets" element={<Rua />} />
-      <Route path="/Question1" element={<Question1 />} />
+      {isLogado && (
+        <>
+          <Route path="/Dashboard/Dono" element={<Dashboard />} />
+          <Route path="/Dashboard/Pets" element={<DashboardPets />} />
+          <Route path="/Dashboard/Cadastro" element={<Primeira />} />
+          <Route path="/Pets" element={<Rua />} />
+          <Route path="/Question1" element={<Question1 />} />
 
-      <Route path="/Admin" element={<Admin />} />
-      <Route path="/animaisDomesticos" element={<Domesticos />} />
-      <Route path="/animaisRua" element={<AnimaisRua />} />
+          <Route path="/Admin" element={<Admin />} />
+          <Route path="/animaisDomesticos" element={<Domesticos />} />
+          <Route path="/animaisRua" element={<AnimaisRua />} />
+        </>
+      )}
     </Routes>
   );
 }

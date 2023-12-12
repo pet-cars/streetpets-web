@@ -3,7 +3,8 @@ import { useState } from "react";
 import axios from "axios";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useIsLogadoContext } from "../../context/auth/isLogadoContext";
 
 const valorFormulario = {
   nome: String,
@@ -20,6 +21,10 @@ const valorFormulario = {
 
 export default function Cadastro() {
   const [formValores, setFormValores] = useState(valorFormulario);
+  const navigate = useNavigate()
+
+  const { setIsLogado } = useIsLogadoContext();
+
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormValores((prevState) => ({
@@ -38,6 +43,11 @@ export default function Cadastro() {
         "http://localhost:3333/register",
         formValores
       );
+      if (registrar) {
+        localStorage.setItem("token", registrar.data.token)
+        setIsLogado(true)
+        navigate("/Dashboard/Dono")
+      }
       console.log(registrar.data);
     } catch (error) {
       console.log(error);
