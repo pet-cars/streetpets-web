@@ -9,7 +9,7 @@ header {
   width: 100%;
   margin: 0 auto;
   padding: 0 1.5rem;
-  box-shadow: 0 0 10px 0 rgb(151, 141, 141);
+  box-shadow: 0 0 10px rgb(151, 141, 141);
 }
 
 .titulo-admin {

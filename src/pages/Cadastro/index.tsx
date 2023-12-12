@@ -200,9 +200,7 @@ export default function Cadastro() {
 
             <div className="botao">
               <button type="submit" className="enviar-cadastro">
-                <NavLink className={"a"} to={"/login"}>
-                  Enviar
-                </NavLink>
+                Enviar
               </button>
             </div>
           </form>
