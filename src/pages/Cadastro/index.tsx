@@ -21,10 +21,9 @@ const valorFormulario = {
 
 export default function Cadastro() {
   const [formValores, setFormValores] = useState(valorFormulario);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const { setIsLogado } = useIsLogadoContext();
-
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormValores((prevState) => ({
@@ -44,9 +43,9 @@ export default function Cadastro() {
         formValores
       );
       if (registrar) {
-        localStorage.setItem("token", registrar.data.token)
-        setIsLogado(true)
-        navigate("/Dashboard/Dono")
+        localStorage.setItem("token", registrar.data.token);
+        setIsLogado(true);
+        navigate("/Question1");
       }
       console.log(registrar.data);
     } catch (error) {
@@ -73,6 +72,7 @@ export default function Cadastro() {
                     className="form-campo"
                     required
                     name="nome"
+                    placeholder="EX: Juliano Garcia"
                     id="nome"
                     type="text"
                     onChange={(e) => onChange(e)}
@@ -87,6 +87,7 @@ export default function Cadastro() {
                     className="form-campo"
                     required
                     name="rg"
+                    placeholder="EX: 44.339.204-3"
                     id="rg"
                     type="text"
                     onChange={onChange}
@@ -101,6 +102,7 @@ export default function Cadastro() {
                     className="form-campo"
                     required
                     name="cpf"
+                    placeholder="EX: 330.803.990-72"
                     id="cpf"
                     type="text"
                     onChange={onChange}
@@ -115,6 +117,7 @@ export default function Cadastro() {
                     className="form-campo"
                     required
                     name="email"
+                    placeholder="EX: julinho@gmail.com"
                     id="email"
                     type="email"
                     onChange={onChange}
@@ -129,6 +132,7 @@ export default function Cadastro() {
                     className="form-campo"
                     required
                     name="senha"
+                    placeholder="••••••••"
                     id="senha"
                     type="password"
                     onChange={onChange}
@@ -145,6 +149,7 @@ export default function Cadastro() {
                     className="form-campo"
                     required
                     name="Csenha"
+                    placeholder="••••••••"
                     id="Csenha"
                     type="password"
                     onChange={onChange}
@@ -159,6 +164,7 @@ export default function Cadastro() {
                     className="form-campo"
                     required
                     name="cep"
+                    placeholder="68925-043"
                     id="cep"
                     type="text"
                     onChange={onChange}
@@ -173,6 +179,7 @@ export default function Cadastro() {
                     className="form-campo"
                     required
                     name="bairro"
+                    placeholder="Vila Bonita"
                     id="bairro"
                     type="text"
                     onChange={onChange}
@@ -187,6 +194,7 @@ export default function Cadastro() {
                     className="form-campo"
                     required
                     name="endereco"
+                    placeholder="Rua belgica numero 44"
                     id="endereco"
                     type="text"
                     onChange={onChange}
@@ -200,6 +208,7 @@ export default function Cadastro() {
                   <input
                     className="form-campo"
                     name="complemento"
+                    placeholder="Perto do homem de lata"
                     id="complemento"
                     type="text"
                     onChange={onChange}

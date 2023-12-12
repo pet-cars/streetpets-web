@@ -24,7 +24,6 @@ import { useIsLogadoContext } from "../context/auth/isLogadoContext";
 //     return <Outlet/>
 // }
 export default function AllRoutes() {
-
   const { isLogado } = useIsLogadoContext();
 
   return (
@@ -41,12 +40,11 @@ export default function AllRoutes() {
           <Route path="/Dashboard/Cadastro" element={<Primeira />} />
           <Route path="/Pets" element={<Rua />} />
           <Route path="/Question1" element={<Question1 />} />
-
-          <Route path="/Admin" element={<Admin />} />
-          <Route path="/animaisDomesticos" element={<Domesticos />} />
-          <Route path="/animaisRua" element={<AnimaisRua />} />
         </>
       )}
+      <Route path="/Admin" element={<Admin />} />
+      <Route path="/animaisDomesticos" element={<Domesticos />} />
+      <Route path="/animaisRua" element={<AnimaisRua />} />
     </Routes>
   );
 }

@@ -12,6 +12,9 @@
   animation: animacao 2s;
   z-index: 2;
 }
+.color {
+  background-color: #fff !important;
+}
 @keyframes animacao {
   0% {
     top: 0vh;
@@ -42,11 +45,11 @@
 }
 
 .menu-itemB a {
-  color: var(--laranjao);
+  color: black;
 }
 
 .menu-itemB a.active {
-  color: #fff;
+  color: var(--laranjao);
 }
 
 .buttonB {
@@ -55,6 +58,6 @@
   border: none;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
-  color: #ffff;
-  background-color: #f87800;
+  color: var(--laranjao);
+  background-color: black;
 }

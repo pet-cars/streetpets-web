@@ -1,134 +1,126 @@
-.todo{
-    display: flex;
-    gap: 5rem;
-}
-.men{
-    width: 16%;
-    padding: 1rem;
-    background-color: blue;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+.men {
+  width: 16%;
+  padding: 1rem;
+  background-color: blue;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
-.m{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.m {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-
-.menu-i{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 5rem;
-    margin-bottom: 30vh;
+.menu-i {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 5rem;
+  margin-bottom: 30vh;
 }
 
-.i{
-    font-size: 19px;
-    position: relative;
+.i {
+  font-size: 19px;
+  position: relative;
 }
 .i a.active {
-    color: #F87800;
-
+  color: #f87800;
 }
 
 .i::before {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    height: 3px;
-    width: 0;
-    background: #F87800;
-    border-radius: 50px;
-    transition: width 0.3s ease;
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  height: 3px;
+  width: 0;
+  background: #f87800;
+  border-radius: 50px;
+  transition: width 0.3s ease;
 }
 
 .i:hover::before {
-    width: 100%;
+  width: 100%;
 }
 
-.sair{
-    background-color: var(--laranjao);
-    border: solid 2px var(--laranjao);
-    padding: 0.5rem;
-    width: 100%;
-    border-radius: 25px;
-    color: #fff;
-    font-weight: 500;
-    font-size: 15px;
-    font-family: 'Poppins';
+.sair {
+  background-color: var(--laranjao);
+  border: solid 2px var(--laranjao);
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 15px;
+  font-family: "Poppins";
 }
 
-button{
-    border: none;
-    cursor: pointer;
+button {
+  border: none;
+  cursor: pointer;
 }
 
-.cont{
-    width: 100%;
-    display: inline-block;
-    padding-right: 5rem;
-    margin-top: 1rem;
-
+.cont {
+  width: 100%;
+  display: inline-block;
+  margin-top: 1rem;
 }
 
-.titulo-D{
-    margin-top: 1rem;
-    text-align: center;
+.titulo-D {
+  margin-top: 1rem;
+  text-align: center;
 }
 
-.painel{
-    width: 100%;
-    margin-top: 2rem;
-    background-color: #F8F8FF;
-    border-radius: 25px;
-    box-shadow: 1px 1px 3px 3px #e7dede;
-    padding: 3rem;
+.painel {
+  width: 100%;
+  margin-top: 2rem;
+  background-color: #f8f8ff;
+  border-radius: 25px;
+  box-shadow: 1px 1px 3px 3px #e7dede;
+  padding: 3rem;
 }
 
-.form-D{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3rem;
+.form-D {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
 }
 
-.item-p{
-    display: flex;
-    flex-direction: column;
-    width: 29%;
+.item-p {
+  display: flex;
+  flex-direction: column;
+  width: 29%;
 }
 
-.item{
-    color: var(--laranjao);
-    font-weight: 600;
+.item {
+  color: var(--laranjao);
+  font-weight: 600;
 }
 
-.dados{
-    padding: 0.5rem;
-    background-color: #fff;
-    border: 1px solid var(--azulao);
-    border-radius: 5px;
+.dados {
+  padding: 0.5rem;
+  background-color: #fff;
+  border: 1px solid var(--azulao);
+  border-radius: 5px;
 }
 
-.dados::-webkit-input-placeholder{
-    font-family: Poppins, sans-serif;
-    color: var(--azulao);
-    opacity: 0.8;
-    font-weight: 400;
+.dados::-webkit-input-placeholder {
+  font-family: Poppins, sans-serif;
+  color: var(--azulao);
+  opacity: 0.8;
+  font-weight: 400;
 }
 
 @media (max-width: 768px) {
-    .item-p{
-        width: 26%;
-    }
+  .item-p {
+    width: 26%;
+  }
 
-    .i{
-        font-size: 18px;
-    }
+  .i {
+    font-size: 18px;
+  }
 }

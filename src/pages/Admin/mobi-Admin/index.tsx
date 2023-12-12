@@ -2,21 +2,21 @@ import { NavLink } from "react-router-dom";
 
 import "./styles.css";
 
-export function MenuMobi() {
+export function MobiAdmin() {
   function recarregar() {
     window.location.reload();
   }
   return (
-    <header className="menu-mobile">
+    <header className="menu-mobile color">
       <ul className="menu-content">
         <li className="menu-itemB">
-          <NavLink to="/Dashboard/Dono">Seus Dados</NavLink>
+          <NavLink to="/Admin">Usuarios Cadastrados</NavLink>
         </li>
         <li className="menu-itemB">
-          <NavLink to="/Dashboard/Pets">Dados do seu Pet</NavLink>
+          <NavLink to="/animaisDomesticos">Animais Cadastrados</NavLink>
         </li>
         <li className="menu-itemB">
-          <NavLink to="/Dashboard/Cadastro">Cadastrar Animais</NavLink>
+          <NavLink to="/AnimaisRua">Animais Abandonados</NavLink>
         </li>
         <button className="buttonB">
           <NavLink to="/">Sair</NavLink>

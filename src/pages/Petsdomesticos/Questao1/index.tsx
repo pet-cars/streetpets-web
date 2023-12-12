@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import "../style.css";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
+import { X, Menu } from "lucide-react";
+import { MenuMobi } from "../../Dashboard/Menu-Mobi";
 
 const valorFormulario = {
   nome: String,
@@ -56,34 +58,40 @@ export default function Question1() {
       console.log(error);
     }
   }
+  const [showMenu, setShowMenu] = useState(false);
+
+  function openMenu() {
+    setShowMenu(!showMenu);
+
+    if (!showMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }
 
   return (
     <>
       <div className="todo">
-        <header className="men fixo">
-          <nav className="m">
-            <div className="aling">
-              <ul className="menu-i">
-                <li className="i">
-                  <NavLink to={"/Dashboard/Dono"}>Área do Dono</NavLink>
-                </li>
-
-                <li className="i">
-                  <NavLink to={"/Dashboard/Pets"}>Área do Pet</NavLink>
-                </li>
-
-                <li className="i">
-                  <NavLink to={"/Dashboard/Cadastro"}>Cadastrar Pet</NavLink>
-                </li>
-              </ul>
-
-              <NavLink to={"/"}>
-                <button className="sair" type="button">
-                  Sair
-                </button>
-              </NavLink>
-            </div>
+        <header className="menu-dashboard">
+          <nav className="menu-admin usuario">
+            <ul className="menu">
+              <li className="item">
+                <NavLink to="/Question1">Cadastre seu pet</NavLink>
+              </li>
+              <li className="item">
+                <NavLink to="/Pets">Cadastre um bichinho de rua</NavLink>
+              </li>
+            </ul>
+            <button className="mobile-menu" onClick={openMenu}>
+              {showMenu ? <X /> : <Menu />}
+            </button>
           </nav>
+          <li className="item sair-dashboard">
+            <NavLink to="/">Sair</NavLink>
+          </li>
+
+          {showMenu && <MenuMobi />}
         </header>
         <main>
           <div className="">

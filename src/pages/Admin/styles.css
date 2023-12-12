@@ -12,6 +12,10 @@ header {
   box-shadow: 0 0 10px rgb(151, 141, 141);
 }
 
+.tabela {
+  overflow-y: auto;
+}
+
 .titulo-admin {
   margin-top: 3rem;
   text-align: center;
@@ -20,6 +24,7 @@ header {
 table {
   border-collapse: collapse;
   border-spacing: 0px;
+  width: 100%;
 }
 
 table,
@@ -42,4 +47,9 @@ td {
 .s-1 {
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 768px) {
+  .estatisticas {
+    flex-direction: column;
+  }
 }

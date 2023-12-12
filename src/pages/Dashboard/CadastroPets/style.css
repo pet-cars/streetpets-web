@@ -2,3 +2,10 @@
   display: flex !important;
   justify-content: space-between !important;
 }
+
+@media (max-width: 768px) {
+  .escolha {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

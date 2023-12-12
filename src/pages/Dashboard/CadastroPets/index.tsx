@@ -1,35 +1,48 @@
 import { NavLink } from "react-router-dom";
 import "./style.css";
+import { useState } from "react";
+import { X, Menu } from "lucide-react";
+import { MobileMenu } from "../../../components/Header/Mobile-menu";
+import { MenuMobi } from "../Menu-Mobi";
 
 export default function Primeira() {
-  // const isRadioSelected = (value: string): boolean => true;
+  const [showMenu, setShowMenu] = useState(false);
 
-  // const handleRadioClick = (e:React.ChangeEvent<HTMLInputElement>): void => console.log('click')
+  function openMenu() {
+    setShowMenu(!showMenu);
+
+    if (!showMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }
 
   return (
     <>
       <div className="todo">
-        <header className="men">
-          <nav className="m">
-            <div className="aling">
-              <ul className="menu-i">
-                <li className="i">
-                  <NavLink to={"/Dashboard/Dono"}>Área do Dono</NavLink>
-                </li>
-
-                <li className="i">
-                  <NavLink to={"/Dashboard/Pets"}>Área do Pet</NavLink>
-                </li>
-
-                <li className="i">
-                  <NavLink to={"/Dashboard/Cadastro"}>Cadastrar Pet</NavLink>
-                </li>
-              </ul>
-              <button className="sair" type="submit">
-                Sair
-              </button>
-            </div>
+        <header className="menu-dashboard">
+          <nav className="menu-admin usuario">
+            <ul className="menu">
+              <li className="item">
+                <NavLink to="/Dashboard/Dono">Seus Dados</NavLink>
+              </li>
+              <li className="item">
+                <NavLink to="/Dashboard/Pets">Dados do seu pet</NavLink>
+              </li>
+              <li className="item">
+                <NavLink to="/Dashboard/Cadastro">Cadastrar Pets</NavLink>
+              </li>
+            </ul>
+            <button className="mobile-menu" onClick={openMenu}>
+              {showMenu ? <X /> : <Menu />}
+            </button>
           </nav>
+          <li className="item sair-dashboard">
+            <NavLink to="/">Sair</NavLink>
+          </li>
+
+          {showMenu && <MenuMobi />}
         </header>
 
         <main>
@@ -53,7 +66,6 @@ export default function Primeira() {
           </div>
         </main>
       </div>
-          
     </>
   );
 }

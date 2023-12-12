@@ -3,7 +3,9 @@ import { X, Menu } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { MobileMenu } from "../../../components/Header/Mobile-menu";
 // import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { MobiAdmin } from "../mobi-Admin";
 
 export default function Rua() {
   const [showMenu, setShowMenu] = useState(false);
@@ -18,56 +20,55 @@ export default function Rua() {
     }
   }
 
-  //   axios
-  //     .get("http://localhost:3333")
-  //     .then((response) => {
-  //       console.log(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Erro ao buscar os dados", error);
-  //     });
+  axios
+    .get("http://localhost:3333")
+    .then((response) => {
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.error("Erro ao buscar os dados", error);
+    });
 
-  //   type Dado = {
-  //     id: number;
-  //     nome: string;
-  //     castrado: string;
-  //     vacinadoContraRaiva: string;
-  //     sexo: string;
-  //     porte: string;
-  //     especie: string;
-  //   };
+  type Dado = {
+    id: number;
+    aparencia: string;
+    localizacao: string;
+    especie: string;
+    sexo: string;
+    porte: string;
+  };
 
   function MeuComponente() {
-    // const [dados, setDados] = useState<any>([]);
+    const [dados, setDados] = useState<any>([]);
 
-    // useEffect(() => {
-    //   axios
-    //     .get("http://localhost:3333/PetsDomesticos")
-    //     .then((response) => {
-    //       setDados(response.data);
-    //     })
-    //     .catch((error) => {
-    //       console.error("Erro ao buscar os dados", error);
-    //     });
-    // }, []);
-    // console.log(dados);
-    // let castrado = 0;
-    // for (let index = 0; index < dados.length; index++) {
-    //   const element = dados[index];
-    //   if (element.castrado === "sim") {
-    //     castrado += 1;
-    //     console.log("é castrado");
-    //   }
-    //   console.log(castrado);
-    // }
+    useEffect(() => {
+      axios
+        .get("http://localhost:3333/petsRua")
+        .then((response) => {
+          setDados(response.data);
+        })
+        .catch((error) => {
+          console.error("Erro ao buscar os dados", error);
+        });
+    }, []);
+    console.log(dados);
+    let castrado = 0;
+    for (let index = 0; index < dados.length; index++) {
+      const element = dados[index];
+      if (element.castrado === "sim") {
+        castrado += 1;
+        console.log("é castrado");
+      }
+      console.log(castrado);
+    }
 
-    // let vacinado = 0;
-    // for (let index = 0; index < dados.length; index++) {
-    //   const element = dados[index];
-    //   if (element.vacinadoContraRaiva === "sim") {
-    //     vacinado += 1;
-    //   }
-    // }
+    let vacinado = 0;
+    for (let index = 0; index < dados.length; index++) {
+      const element = dados[index];
+      if (element.vacinadoContraRaiva === "sim") {
+        vacinado += 1;
+      }
+    }
 
     return (
       <>
@@ -89,7 +90,7 @@ export default function Rua() {
             </button>
           </nav>
 
-          {showMenu && <MobileMenu />}
+          {showMenu && <MobiAdmin />}
         </header>
 
         <main>
@@ -98,51 +99,34 @@ export default function Rua() {
           <div className="tudo">
             <div className="s-1">
               <div className="estatisticas">
-                <h3 className="total">
-                  Total de Animais: 2{/*{dados.length}*/}
-                </h3>
+                <h3 className="total">Total de Animais: {dados.length}</h3>
               </div>
-
-              <table border={1} className="tabela">
-                <tr>
-                  <th>id</th>
-                  <th>Aparencia</th>
-                  <th>Localização</th>
-                  <th>Especie</th>
-                  <th>Sexo</th>
-                  <th>Porte</th>
-                </tr>
-
-                {/* {dados.map((dado: Dado) => (
-                  <tr key={dado.id}>
-                    <td>{dado.id}</td>
-                    <td>{dado.nome}</td>
-                    <td>{dado.castrado}</td>
-                    <td>{dado.vacinadoContraRaiva}</td>
-                    <td>{dado.sexo}</td>
-                    <td>{dado.porte}</td>
-                    <td>{dado.especie}</td>
-                  </tr>
-                ))} */}
-
-                <tr>
-                  <td>1</td>
-                  <td>teste</td>
-                  <td>teste</td>
-                  <td>gato</td>
-                  <td>macho</td>
-                  <td>medio</td>
-                </tr>
-
-                <tr>
-                  <td>2</td>
-                  <td>preto</td>
-                  <td>etec rua belgica numero 44</td>
-                  <td>cachorro</td>
-                  <td>macho</td>
-                  <td>Pequeno</td>
-                </tr>
-              </table>
+              <div className="tabela">
+                <table border={1}>
+                  <thead>
+                    <tr>
+                      <th>id</th>
+                      <th>Aparencia</th>
+                      <th>Localização</th>
+                      <th>Especie</th>
+                      <th>Sexo</th>
+                      <th>Porte</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {dados.map((dado: Dado) => (
+                      <tr key={dado.id}>
+                        <td>{dado.id}</td>
+                        <td>{dado.aparencia}</td>
+                        <td>{dado.localizacao}</td>
+                        <td>{dado.especie}</td>
+                        <td>{dado.sexo}</td>
+                        <td>{dado.porte}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </main>

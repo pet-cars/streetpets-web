@@ -3,7 +3,6 @@ import "./styles.css";
 import { useState } from "react";
 import { X, Menu } from "lucide-react";
 import { MenuMobi } from "../Menu-Mobi";
-import { MobileMenu } from "../../../components/Header/Mobile-menu";
 
 export default function Dashboard() {
   const [showMenu, setShowMenu] = useState(false);
@@ -33,14 +32,14 @@ export default function Dashboard() {
             </li>
           </ul>
           <button className="mobile-menu" onClick={openMenu}>
-            {showMenu ? <X /> : <Menu />}
+            {showMenu ? <X className="x" /> : <Menu />}
           </button>
         </nav>
-        <li className="item">
+        <li className="item sair-dashboard">
           <NavLink to="/">Sair</NavLink>
         </li>
 
-        {showMenu && <MobileMenu />}
+        {showMenu && <MenuMobi />}
       </header>
 
       <main className="cont">
